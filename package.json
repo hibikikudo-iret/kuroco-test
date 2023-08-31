@@ -15,14 +15,10 @@
     "@mui/material": "^5.14.6",
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.19.3",
-<<<<<<< HEAD
     "date-fns": "^2.30.0",
     "glob-parent": "^6.0.2",
     "nuxt": "^2.17.0",
     "react-hook-form": "^7.45.4",
-=======
-    "nuxt": "^3.7.0",
->>>>>>> e7f95a47b22eca38f1d942c67b49691516fbcffa
     "vue": "^2.7.14",
     "vue-router": "^3.0.0",
     "vue-server-renderer": "^2.6.14",
