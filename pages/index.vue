@@ -38,6 +38,7 @@
   export default {
     async asyncData({ $axios }) {
       return { response: await $axios.$get('https://iret-design.g.kuroco.app/rcms-api/3/service/3') };
+      //return { response: await $axios.$get('https://iret-design.g.kuroco.app/rcms-api/7/case') };
     },
   };
   </script>
