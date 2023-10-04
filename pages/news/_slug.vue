@@ -9,7 +9,7 @@
   export default {
     async asyncData({ $axios, params }) {
       return {
-        response: await $axios.$get(`/rcms-api/4/newsdetail/${params.slug}`),
+        response: await $axios.$get(`/rcms-api/8/newsdetail/${params.slug}`),
       };
     },
   };

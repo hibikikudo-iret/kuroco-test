@@ -1,20 +1,30 @@
 <template>
-    <div>
-      <p>ニュース一覧ページ</p>
-      <div v-for="n in response.list" :key="n.slug">
-        <nuxt-link :to="`/news/${n.topics_id}`">
-          {{ n.ymd }} {{ n.subject }}
-        </nuxt-link>
-      </div>
+  <div>
+    <p>ニュース一覧ページ{{ this.$route.query.page }}</p>
+    <div v-for="n in response.list" :key="n.slug">
+      <nuxt-link :to="`/news/${n.topics_id}`">
+        {{ n.ymd }} {{ n.subject }}
+      </nuxt-link>
     </div>
-  </template>
+    <Pagenator v-bind="{ ...response.pageInfo }" />
+  </div>
+</template>
   
-  <script>
-  export default {
-    async asyncData({ $axios }) {
-      return {
-        response: await $axios.$get('/rcms-api/4/news'),
-      };
-    },
-  };
-  </script>
+<script>
+import Pagenator from '/components/Paginator.vue';
+
+export default {
+  components: {
+    Pagenator,
+  },
+    async asyncData({ $axios, route }) {
+    return {
+      //response: await $axios.$get('/rcms-api/4/news'),
+      response: await $axios.$get('/rcms-api/8/news'),
+      params: {
+          pageID: route.query.page || 1,
+        },
+    };
+  },
+};
+</script>
