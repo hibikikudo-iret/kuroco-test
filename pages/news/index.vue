@@ -6,24 +6,24 @@
         {{ n.ymd }} {{ n.subject }}
       </nuxt-link>
     </div>
-    <Pagenator v-bind="{ ...response.pageInfo }" />
+    <Paginator v-bind="{ ...response.pageInfo }" />
   </div>
 </template>
   
 <script>
-import Pagenator from '/components/Paginator.vue';
+import Paginator from '/components/Paginator.vue';
 
 export default {
   components: {
-    Pagenator,
+    Paginator,
   },
-    async asyncData({ $axios, route }) {
+  async asyncData({ $axios, route }) {
     return {
-      //response: await $axios.$get('/rcms-api/4/news'),
-      response: await $axios.$get('/rcms-api/8/news'),
-      params: {
+      response: await $axios.$get('/rcms-api/8/news', {
+        params: {
           pageID: route.query.page || 1,
         },
+      }),
     };
   },
 };
